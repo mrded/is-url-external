@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(url) {
-  var host = window.location.host;
+  var host = window.location.hostname;
 
   var linkHost = function(url) {
     // The easy way to parse an URL, is to create <a> element.
