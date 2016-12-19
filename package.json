@@ -1,0 +1,26 @@
+{
+  "name": "is-url-external",
+  "version": "1.0.0",
+  "description": "A simple function that tells you whether an URL is external or not.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrded/is-url-external.git"
+  },
+  "keywords": [
+    "link",
+    "href",
+    "external",
+    "internal",
+    "blank",
+    "target",
+    "a"
+  ],
+  "author": "Dmitry Demenchuk @mrded (dmitry@demenchuk.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrded/is-url-external/issues"
+  },
+  "homepage": "https://github.com/mrded/is-url-external#readme",
+  "dependencies": {}
+}
