@@ -1,0 +1,19 @@
+{
+  "name": "is-url-external",
+  "description": "A simple function that tells you whether an URL is external or not.",
+  "main": "index.js",
+  "authors": [
+    "Dmitry Demenchuk @mrded (dmitry@demenchuk.me)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "link",
+    "href",
+    "external",
+    "internal",
+    "blank",
+    "target",
+    "a"
+  ],
+  "homepage": "https://github.com/mrded/is-url-external"
+}
