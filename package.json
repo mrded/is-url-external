@@ -1,6 +1,6 @@
 {
   "name": "is-url-external",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple function that tells you whether an URL is external or not.",
   "main": "index.js",
   "repository": {
