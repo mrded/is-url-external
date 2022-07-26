@@ -1,0 +1,65 @@
+version: 2.1
+orbs:
+  node: circleci/node@5.0.2
+
+jobs:
+  test:
+    parameters:
+      node_version:
+        type: string
+    resource_class: small
+    docker:
+      - image: cimg/node:<< parameters.node_version >>
+    steps:
+      - checkout
+      - run:
+          name: Install 
+          command: npm install 
+      - run:
+          name: Lint
+          command: npm run lint
+      - run:
+          name: Test 
+          command: npm run test
+
+  release:
+    resource_class: small
+    docker:
+      - image: cimg/node:16.14
+    steps:
+      - checkout
+      - run:
+          name: Install 
+          command: npm install 
+      - run:
+          name: Lint
+          command: npm run lint
+      - run:
+          name: Test 
+          command: npm run test
+      # - run:
+      # # You need to provide GH_TOKEN & NPM_TOKEN in CircleCI environment settings 
+      # # see: https://www.npmjs.com/package/semantic-release-cli
+      #     name: Release on GitHub
+      #     command: npx semantic-release@16 --branches main
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test:
+          name: Test on node << matrix.node_version >>
+          matrix:
+            parameters:
+              node_version: ['12.22.11', '14.19.1', '16.14.2']
+          filters:
+            branches:
+              ignore:
+                - main
+
+      - release:
+          name: Release
+          filters:
+            branches:
+              only:
+                - main

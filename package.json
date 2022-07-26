@@ -1,11 +1,11 @@
 {
   "name": "is-url-external",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "A simple function that tells you whether an URL is external or not.",
-  "main": "index.js",
+  "author": "Dmitry Demenchuk @mrded",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrded/is-url-external.git"
+    "url": "https://github.com/mrded/is-url-external.git"
   },
   "keywords": [
     "link",
@@ -16,11 +16,28 @@
     "target",
     "a"
   ],
-  "author": "Dmitry Demenchuk @mrded (dmitry@demenchuk.me)",
   "license": "WTFPL",
-  "bugs": {
-    "url": "https://github.com/mrded/is-url-external/issues"
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prepare": "npm run build",
+    "lint": "eslint 'src/**/*.?s'",
+    "test": "jest",
+    "format": "prettier --write 'src/**/*.?s'"
   },
-  "homepage": "https://github.com/mrded/is-url-external#readme",
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "jest": "^28.1.3",
+    "prettier": "^2.7.1",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.4.4"
+  },
   "dependencies": {}
 }
