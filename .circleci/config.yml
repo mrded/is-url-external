@@ -55,11 +55,11 @@ workflows:
           filters:
             branches:
               ignore:
-                - main
+                - master
 
       - release:
           name: Release
           filters:
             branches:
               only:
-                - main
+                - master
