@@ -6,6 +6,8 @@ A simple function that tells you whether an URL is external or not.
 ```javascript
 import { isUrlExternal } from "./index";
 
-isExternal('https://github.com/mrded/is-url-external', 'github.com'); // true | false
-isExternal('https://github.com/mrded/is-url-external', window.location.hostname); // true | false
+isUrlExternal('https://github.com/mrded/is-url-external', 'github.com'); // false 
+
+const isExternal = (url: string) => isUrlExternal(url, window.location.hostname);
+isExternal('https://github.com/mrded/is-url-external'); // true | false
 ```
