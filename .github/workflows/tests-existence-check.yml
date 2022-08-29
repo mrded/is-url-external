@@ -1,0 +1,22 @@
+name: Tests existence check 
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: mrded/tests-existence-check@v1.0
+      with: 
+        target-file-path-prefix: src/
+        target-file-path-suffix: .ts
+        test-file-path-prefix: src/ 
+        test-file-path-suffix: .test.ts
+
